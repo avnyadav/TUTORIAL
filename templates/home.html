@@ -1,0 +1,41 @@
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+    <style>
+      #student{
+    }
+    #stud:hover{
+         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+    }
+#description{
+    background-color: white;
+    opacity: 0.5;
+}
+    #description:hover{
+        background-color: white;
+        opacity: 1;
+    }
+
+    </style>
+
+
+  <div class="row">
+         {% for stud in teacher %}
+        <div class="col-md-3">
+        <div class="thumbnail" id="stud">
+            <label>{{ stud.teacher_email }}</label>
+       <img id="student" src="{{ stud.img.url }}">
+
+            <div class="caption carousel-caption" id="description">
+             {{ stud.teacher_name }}<br>
+             +91{{ stud.phone_no }}
+            </div>
+
+        </div>
+
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
